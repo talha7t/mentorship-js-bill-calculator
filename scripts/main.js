@@ -3,7 +3,12 @@ const billText = document.getElementById("bill");
 
 /*--------Event Listeners----------------- */
 
-billGenerator.addEventListener("click", function (e) {
+billGenerator.addEventListener("click", calculateBill);
+
+/*------------Functions--------------- */
+
+function calculateBill(e) {
+  //Function to calculate bill
   e.preventDefault();
 
   const totalBill = document.querySelector(".total-bill");
@@ -18,4 +23,4 @@ billGenerator.addEventListener("click", function (e) {
     const bill = totalBill.value / people.value;
     billText.innerText = `Payable bill = ${bill}`;
   }
-});
+}
